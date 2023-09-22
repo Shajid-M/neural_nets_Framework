@@ -5,11 +5,18 @@ from nn_framework.activation import Tanh, Logistic, Relu
 from nn_framework import error_fun
 from nn_framework.autoencoder_viz import NNViz
 PIXEL_VALUE_RANGE = (0, 1)
+N_EXAMPLES = 20
+PIC_SIZE = (10, 10)
 N_NODES = [10]
 
 
 def main():
-    training_set, evaluation_set = get_data_sets(20, (3, 3))
+    training_set, evaluation_set = get_data_sets(
+        pix_min=(PIXEL_VALUE_RANGE[0]),
+        pix_max=int(PIXEL_VALUE_RANGE[1]),
+        n=N_EXAMPLES,
+        inp_size=PIC_SIZE
+    )
     sample = next(training_set())
     n_pixels = sample.shape[0] * sample.shape[1]
     n_nodes = [n_pixels] + N_NODES + [n_pixels]

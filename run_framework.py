@@ -6,7 +6,7 @@ from nn_framework import error_fun
 from nn_framework.autoencoder_viz import NNViz
 PIXEL_VALUE_RANGE = (0, 1)
 N_EXAMPLES = 20
-PIC_SIZE = (10, 10)
+PIC_SIZE = (2, 2)
 N_NODES = [10]
 
 
